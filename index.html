@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Haylie Ridenhour</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
+
+<script>
+//On page load ensure the proper tab is styled
+(function() {
+  var nav = document.getElementById('navlist'),
+      options = nav.getElementsByTagName('li'),
+      current = window.location.pathname.split('/')[1];
+  for (var i = 0; i < options.length; i++) {
+    if(options[i].innerHTML.replace(/\s+/g, '').toLowerCase() == current) {
+      options[i].style.color = 'black';
+    }
+  }
+})();
+
+//On click function for toggling between tabs to update styles
+function toggleClass(el){
+  var children = document.getElementById('navlist').children;
+  for(var j = 0; j < children.length; j++){
+    children[j].style.color = '#ffffff';
+  }
+  el.style.color = 'black';
+}
+
+</script>
